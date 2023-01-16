@@ -10,16 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: New Group
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: New Group
   m_Data:
     m_SerializedData: []
-  m_GUID: a61cab5e554249e4493f0f1828dfb932
-  m_SerializeEntries: []
+  m_GUID: b2c57b516e92c514ba471492a4d38d49
+  m_SerializeEntries:
+  - m_GUID: a8c74f7021771914dbd63b3aeb80b47f
+    m_Address: Assets/Starter.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - remoter
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e1ad6641d0a394640aa36b05181d0a2a, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 894c5e8d6b4d11247a7d21d1b3e2af19, type: 2}
-    - {fileID: 11400000, guid: c591d034908a2104bbd46dd69e24152b, type: 2}
+    - {fileID: 11400000, guid: f4df40c6db13acb41a8a0eaf4cfb9e02, type: 2}
+    - {fileID: 11400000, guid: 587a6fc68f7982c4fb32444ef6fd053d, type: 2}

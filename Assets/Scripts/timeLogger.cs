@@ -23,7 +23,13 @@ public class timeLogger : MonoBehaviour
     public long startTime;
 
 #if UNITY_EDITOR
-
+    private void Update()
+    {
+        if (Input.touchCount == 2)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
     private void OnEnable()
     {
         // Register to the playModestaeChanged event

@@ -6,10 +6,11 @@ using UnityEngine.ResourceManagement.AsyncOperations; // Let's us use ASync Oper
 
 public class SpawnAddresableObjects : MonoBehaviour
 {
+    [SerializeField] private AssetLabelReference rem;
     // Start is called before the first frame update
     void Start()
     {
-        Addressables.LoadAssetAsync<GameObject>("Assets/Starter.prefab").Completed += ASynceOperationCompleted; // Loads the addresable with the provided 
+        Addressables.LoadAssetAsync<GameObject>(rem).Completed += ASynceOperationCompleted; // Loads the addresable with the provided 
         //string address and subscribes to the completed call to call the ASyncOperationCompleted Method 
         
     }

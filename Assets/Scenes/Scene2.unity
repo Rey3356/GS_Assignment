@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbb1a9a314c166439f8df89c9f3a397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rem:
+    m_LabelString: remoter
 --- !u!4 &403836586
 Transform:
   m_ObjectHideFlags: 0
@@ -196,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c426f4642b6004342ad574ecb9bf932c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButtonTime: 638094841413113836
+  playButtonTime: 638094921011778297
   startTime: 0
 --- !u!4 &424137414
 Transform:
