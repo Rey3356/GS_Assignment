@@ -17,7 +17,7 @@ MonoBehaviour:
     vec_2: {x: 2, y: 3}
     IntEger: 1
   - image: {fileID: 21300000, guid: b2ce2dff91194a343a1405a30df59e06, type: 3}
-    vec_2: {x: 1.7, y: 0}
+    vec_2: {x: 2, y: 0}
     IntEger: 2
   - image: {fileID: 21300000, guid: d52b2e5f012fa914389b7b09c5ae5652, type: 3}
     vec_2: {x: 2, y: -3}
