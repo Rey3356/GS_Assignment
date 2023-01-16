@@ -5,17 +5,38 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
 // ExecuteInEditMode makes this component also execute if not in PlayMode
 [ExecuteInEditMode]
 public class timeLogger : MonoBehaviour
 {
+
+    //public void Start()
+    //{
+    //    Debug.Log(Time.timeSinceLevelLoad);
+    //}
     // public only for debugging
     public long playButtonTime;
     public long startTime;
 
 #if UNITY_EDITOR
 
-    private void OnPlayModeChanged(PlayModeStateChange stateChange)
+    private void OnEnable()
+    {
+        // Register to the playModestaeChanged event
+        EditorApplication.playModeStateChanged += OnPlayModeChanged;
+    }
+
+    private void OnDisable()
+    {
+        // Unregister from the playModeStateChanged event
+        EditorApplication.playModeStateChanged -= OnPlayModeChanged;
+    }
+
+    private void OnPlayModeChanged(PlayModeStateChange stateChange)//uses switch case to turn on or off relevent time counters for 
     {
         switch (stateChange)
         {
@@ -29,21 +50,9 @@ public class timeLogger : MonoBehaviour
                 startTime = DateTime.Now.Ticks;
                 var difference = (startTime - playButtonTime) / TimeSpan.TicksPerMillisecond;
 
-                Debug.Log("Load Time for "+ SceneManager.GetActiveScene().name + " was: " + difference + "ms", this);
+                Debug.Log("Load Time for " + SceneManager.GetActiveScene().name + " was: " + difference + "ms", this);
                 break;
         }
-    }
-
-    private void OnEnable()
-    {
-        // Register to the playModestaeChanged event
-        EditorApplication.playModeStateChanged += OnPlayModeChanged;
-    }
-
-    private void OnDisable()
-    {
-        // Unregister from the playModeStateChanged event
-        EditorApplication.playModeStateChanged -= OnPlayModeChanged;
     }
 
 #endif
