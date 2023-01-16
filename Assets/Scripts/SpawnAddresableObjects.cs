@@ -10,21 +10,23 @@ public class SpawnAddresableObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Addressables.LoadAssetAsync<GameObject>(rem).Completed += ASynceOperationCompleted; // Loads the addresable with the provided 
-        //string address and subscribes to the completed call to call the ASyncOperationCompleted Method 
-        
-    }
+        // Loads the addresable with the provided label and subscribes to the completed event
+        //Also Utilizez Lambda function
+        Addressables.LoadAssetAsync<GameObject>(rem).Completed +=
+            (asyncoperationhandle) =>
+            {
+                if (asyncoperationhandle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    Instantiate(asyncoperationhandle.Result);
+                }
+                else
+                {
+                    Debug.Log("Failed to Load");
+                }
+            };
 
-    private void ASynceOperationCompleted(AsyncOperationHandle<GameObject> asyncoperationhandle)//Checks if asyncoperation has succeeded in loading the addresable asset
-    {
-        if(asyncoperationhandle.Status == AsyncOperationStatus.Succeeded)//Instiates asset if yes
-        {
-            Instantiate(asyncoperationhandle.Result);
-        }
-        else//through debug log is no
-        {
-            Debug.Log("Failed to Load");
-        }
+
+
     }
 
 }
